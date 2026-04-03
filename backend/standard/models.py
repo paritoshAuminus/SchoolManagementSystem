@@ -23,7 +23,7 @@ class Standard(models.Model):
     school = models.ForeignKey(School, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.title} - {self.school}"
+        return f"Standard {self.title} - {self.school}"
 
 
 class Section(models.Model):
@@ -39,4 +39,4 @@ class Section(models.Model):
     standard = models.ForeignKey(Standard, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.title} - {self.standard}"
+        return f"Section {self.title} - {self.standard}"

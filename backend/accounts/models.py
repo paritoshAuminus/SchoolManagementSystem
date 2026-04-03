@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from school.models import School
+from standard.models import Standard, Section
 
 # Create your models here.
 class User(AbstractUser):
@@ -33,6 +34,7 @@ class Student(models.Model):
     name = models.CharField(max_length=100)
     father_name = models.CharField(max_length=100)
     school = models.ForeignKey(School, on_delete=models.CASCADE)
+    standard = models.ForeignKey(Standard, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
